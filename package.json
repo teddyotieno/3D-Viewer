@@ -1,0 +1,8 @@
+{
+  "name": "swap-colors",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/teddyotieno/swap-colors.git",
+  "author": "Teddy Otieno <teddy.asola@andela.com>",
+  "license": "MIT"
+}
