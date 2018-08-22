@@ -1,1 +1,1 @@
-import styles from "../sass/app.scss";
+import styles from "../sass/app.scss"; //eslint-disable-line

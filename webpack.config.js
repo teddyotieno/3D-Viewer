@@ -7,8 +7,7 @@ const config = {
     entry: "./src/js/app.js",
     output: {
         filename: "bundle.js",
-        path: path.join(__dirname, "dist"),
-        publicPath: path.join(__dirname, "dist")
+        path: path.join(__dirname, "dist")
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -18,6 +17,12 @@ const config = {
     ],
     module: {
         rules: [
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                loader: "eslint-loader",
+                exclude: /node_modules/
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
