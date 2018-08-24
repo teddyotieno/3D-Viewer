@@ -11,6 +11,7 @@
         "start:dev": "webpack-dev-server"
     },
     "devDependencies": {
+        "@wildpeaks/three-webpack-plugin": "^2.0.0",
         "autoprefixer": "^9.1.2",
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.5",
@@ -25,12 +26,17 @@
         "mini-css-extract-plugin": "^0.4.1",
         "node-sass": "^4.9.3",
         "postcss-loader": "^3.0.0",
+        "prettier": "^1.14.2",
         "pug": "^2.0.3",
         "pug-loader": "^2.4.0",
         "sass-loader": "^7.1.0",
+        "style-loader": "^0.22.1",
         "webpack": "^4.16.5",
         "webpack-cli": "^3.1.0",
         "webpack-dev-server": "^3.1.5",
         "yarn": "^1.9.4"
+    },
+    "dependencies": {
+        "three": "^0.95.0"
     }
 }
