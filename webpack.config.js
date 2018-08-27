@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ThreeWebpackPlugin = require("@wildpeaks/three-webpack-plugin");
 
 const config = {
     mode: "development",
@@ -13,16 +14,17 @@ const config = {
         new HtmlWebpackPlugin({
             template: "./src/index.pug"
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new ThreeWebpackPlugin()
     ],
     module: {
         rules: [
-            {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "eslint-loader",
-                exclude: /node_modules/
-            },
+            // {
+            //     enforce: "pre",
+            //     test: /\.js$/,
+            //     loader: "eslint-loader",
+            //     exclude: /node_modules/
+            // },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,

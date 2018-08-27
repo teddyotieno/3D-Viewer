@@ -90,22 +90,10 @@
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/app.scss */ \"./src/sass/app.scss\");\n/* harmony import */ var _sass_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_app_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/js/app.js?");
-
-/***/ }),
-
-/***/ "./src/sass/app.scss":
-/*!***************************!*\
-  !*** ./src/sass/app.scss ***!
-  \***************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/sass/app.scss?");
+eval("// import { Scene, PerspectiveCamera, WebGLRenderer } from \"three\";\n// import styles from \"../sass/app.scss\"; //eslint-disable-line\n\n// function init() {\n//     const add = \"touch\";\n// }\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ })
 
