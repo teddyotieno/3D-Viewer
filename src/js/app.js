@@ -2,11 +2,12 @@ import {
     Scene,
     PerspectiveCamera,
     WebGLRenderer,
-    BoxGeometry,
-    MeshBasicMaterial,
-    Mesh
+    Color,
+    AmbientLight
 } from "three";
 import { OrbitControls } from "three/examples/js/controls/OrbitControls";
+import { GLTFLoader } from "three/examples/js/loaders/GLTFLoader";
+import { OBJLoader } from "three/examples/js/loaders/OBJLoader";
 import styles from "../sass/app.scss"; //eslint-disable-line
 
 // global variables
@@ -25,6 +26,8 @@ function setupRenderer() {
 
 function setupScene() {
     scene = new Scene();
+    scene.background = new Color(0xcccccc);
+    scene.add(new AmbientLight(0x666666));
 }
 
 function setupCamera() {
@@ -32,27 +35,59 @@ function setupCamera() {
         45,
         window.innerWidth / window.innerHeight,
         1,
-        1000
+        3000
     );
 }
 
 function setupControls() {
     const controls = new OrbitControls(camera);
-    camera.position.set(0, 20, 100);
+    camera.position.set(0, 120, 500);
     controls.update();
 }
 
-function setupGeometry() {
-    const geometry = new BoxGeometry(1, 1, 1);
-    const material = new MeshBasicMaterial({
-        color: "red"
-    });
-    const cube = new Mesh(geometry, material);
-    scene.add(cube);
-}
+// function setupGeometry() {
+//     const geometry = new BoxGeometry(1, 1, 1);
+//     const material = new MeshBasicMaterial({
+//         color: "red"
+//     });
+//     const cube = new Mesh(geometry, material);
+//     scene.add(cube);
+// }
 
 function render() {
     renderer.render(scene, camera);
+}
+
+function loadOBJ() {
+    const loader = new OBJLoader();
+    loader.load(
+        "../../model.obj",
+        obj => {
+            scene.add(obj);
+        },
+        xhr => {
+            console.log((xhr.loaded / xhr.total) * 100 + "% loaded"); //eslint-disable-line
+        },
+        error => {
+            console.log(error, "An error happened"); //eslint-disable-line
+        }
+    );
+}
+
+function loadGLTF() {
+    const loader = new GLTFLoader();
+    loader.load(
+        "../../model.gltf",
+        gltf => {
+            scene.add(gltf);
+        },
+        xhr => {
+            console.log((xhr.loaded / xhr.total) * 100 + "% loaded"); //eslint-disable-line
+        },
+        error => {
+            console.log(error, "An error happened"); //eslint-disable-line
+        }
+    );
 }
 
 function init() {
@@ -60,7 +95,8 @@ function init() {
     setupScene();
     setupCamera();
     setupControls();
-    setupGeometry();
+    // loadGLTF();
+    loadOBJ();
 }
 
 init();

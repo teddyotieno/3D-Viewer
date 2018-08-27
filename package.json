@@ -37,6 +37,7 @@
         "yarn": "^1.9.4"
     },
     "dependencies": {
+        "obj2gltf": "^2.2.0",
         "three": "^0.95.0"
     }
 }
